@@ -1,0 +1,10 @@
+/* all */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+
+/* container and form */
+.container {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}

@@ -1,0 +1,87 @@
+<div class="">
+  <div class="text-end mb-1">
+    <a type="button" class="btn btn-secondary" [routerLink]="'/registration'">back to register</a>
+  </div>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>MobileNo</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="userList && userList.length > 0;else nodatafound">
+
+        <tr *ngFor="let item of userList">
+          <td>{{item.username}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.mobileNo}}</td>
+          <td>{{item.cityname}}</td>
+          <td>{{item.statename}}</td>
+          <td>{{item.address}}</td>
+          <td>
+            <div>
+              <button type="button" class="btn btn-primary mr-1" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="editUser(item)">
+                Edit
+              </button>
+              &nbsp;
+              <button type="button" class="btn btn-danger " data-bs-toggle="modal" data-bs-target="#DeleteUser"
+                (click)="deleteUserId = item.id;">
+                Delete
+              </button>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-template #nodatafound>
+        <tr>
+          <td colspan="7">
+            <p class="text-center">No Data Found....</p>
+          </td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-update-user [updateUser]="updateUser" (isSuccess)="userupdate($event)"></app-update-user>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="DeleteUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Delete User</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>are you sure to want to delete this user?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" #myModalClose data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="deleteUser()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
