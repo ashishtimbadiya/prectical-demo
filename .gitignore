@@ -1,0 +1,73 @@
+*.swp
+*.*~
+project.lock.json
+*.pyc
+nupkg/
+packages/
+packaging/
+
+#Logs
+[Ll]ogs/
+[Ll]og/
+[Dd]ocuments
+
+# compiled output
+[Dd]ebug.log
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+Properties/PublishProfiles
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+ExceptionLog/
+msbuild.log
+msbuild.err
+msbuild.wrn
+*.jfm
+*.dbmdl
+*.PublishSettings
+
+bin
+Bin
+obj
+Obj
+Megaminds_prectical/bin
+Megaminds_prectical/Bin
+Megaminds_prectical/obj
+Megaminds_prectical/Obj
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VS
+.vs
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System Files
+.DS_Store
+Thumbs.db
+/Megaminds_prectical/ClientApp/.angular
